@@ -1,0 +1,214 @@
+/* Making a gradient class for the footer */
+.gradient-background {
+  background: linear-gradient(300deg, #2C48E6, #872CE6, #C42CE6);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+    background-color: #000038;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    flex: 1;
+}
+
+header li {
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1rem;
+}
+
+header li a {
+    color: #00EBBC !important;
+}
+
+.divider {
+    background: #000000;
+    height: 5px;
+}
+
+h1 {
+    font-family: "Bungee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #F5F5F5;
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #00CCFF;
+    margin-top: 1rem;
+}
+
+/* The next few blocks of code are for the glowing effect around the image border */
+.quote-container {
+    width: 80%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    color: #F5F5F5;
+    font-size: 2rem;
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+    font-size: clamp(1rem, 2.5vw, 2rem); /* Dynamically resizes */
+    word-wrap: break-word;
+    text-wrap: wrap;
+    line-height: 1.2;
+}
+
+.quote-container:hover:before,
+.quote-container:hover:after {
+    animation: none;
+    opacity: 0;
+}
+
+.quote-container::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: inherit;
+    background-image: linear-gradient(
+      var(--rotate),
+      #2C48E6,
+      #872CE6 43%,
+      #C42CE6
+    );
+    z-index: -1;
+    animation: spin 2.5s linear infinite;
+    transition: opacity 0.5s ease;
+}
+
+.quote-container::after {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: -50px;
+    right: -50px;
+    bottom: -30px;
+    border-radius: calc(1rem + 20px);
+    filter: blur(25px);
+    background-image: linear-gradient(
+      var(--rotate),
+      #2C48E6,
+      #872CE6 43%,
+      #C42CE6
+    );
+    opacity: 0.6;
+    z-index: -2;
+    animation: spin 2.5s linear infinite;
+    transition: opacity 0.5s ease;
+}
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+}
+
+.anime_name {
+    font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    color: #00CCFF;
+    font-size: 1.8rem;
+}
+
+footer span {
+  color: #121212;
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.footer-icons img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-icons img:hover {
+  transform: scale(1.2) rotate(10deg);
+  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.4));
+  transition: transform 0.25s ease, filter 0.25s ease;
+  cursor: pointer;
+}
+
+.news-section {
+    font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: start;
+    font-size: 1.8rem;
+    color: #00EBBC;
+}
+
+.news-title {
+    font-size: 3rem;
+    color: #00CCFF;
+    text-align: start;
+}
+
+.description {
+    font-size: 1.8rem;
+}
+
+.additional_info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+}

@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+
+<h2>All the anime chaos you need! From game drops to manga meltdowns, we've got all the news!</h2>
+
+<div class="news-section p-2 mb-4 rounded-3">
+    <div class="container-fluid py-5">
+        <h2 class="news-title"><u><%= title %></u></h2>
+        <p class="description"><%- description %></p>
+        <div class="additional_info">
+            <p>Date published: <%= pubDate %></p>
+            <p>Category: <%= category %></p>
+        </div>
+        <a href="<%= link %>">Click here for full story</a>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

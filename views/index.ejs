@@ -1,0 +1,11 @@
+<%- include("partials/header.ejs") %>
+
+<h2>Get your daily dose of anime wisdom, one quote at a time!</h2>
+
+<div class="quote-container" style="background-image: url('<%= randomImage %>');">
+    <p><%= quote %></p>
+    <p>-<%= character %></p>
+</div>
+<p class="anime_name"><%= anime %></p>
+
+<%- include("partials/footer.ejs") %>
