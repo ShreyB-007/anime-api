@@ -177,11 +177,11 @@ footer span {
   font-style: normal;
 }
 
-.footer-icons img {
+.footer-icons svg {
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.footer-icons img:hover {
+.footer-icons svg:hover {
   transform: scale(1.2) rotate(10deg);
   filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.4));
   transition: transform 0.25s ease, filter 0.25s ease;
